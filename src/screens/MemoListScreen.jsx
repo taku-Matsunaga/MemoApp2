@@ -37,12 +37,10 @@ export default function MemoListScreen(props) {
             bodyText: data.bodyText,
             updatedAt: data.updatedAt.toDate(),
           });
-          console.log(doc.id, doc.data());
         });
         setMemos(userMemos);
         setLoading(false);
-      }, (error) => {
-        console.log(error);
+      }, () => {
         setLoading(false);
         Alert.alert('データの読み込みに失敗しました');
       });

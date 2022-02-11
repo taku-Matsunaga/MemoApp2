@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import firebase from 'firebase';
+import { LogBox } from 'react-native';
 
 import SignUpScreen from './src/screens/SignUpScreen';
 import LoginScreen from './src/screens/LoginScreen';
@@ -18,6 +19,8 @@ if (firebase.apps.length === 0) {
 }
 
 const Stack = createStackNavigator();
+
+LogBox.ignoreLogs(['Setting a timer']);
 
 export default function App() {
   return (
